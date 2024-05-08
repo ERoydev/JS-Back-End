@@ -1,12 +1,14 @@
 const http = require('http');
+
 const homeTemplate = require('./views/home');
 const addCatTemplate = require('./views/addcat.html.js');
 const addBreedTemplate = require('./views/addbreed.html.js');
 
 const siteCss = require('./views/site.css.js');
+const utils = require('./utils.js');
 
 const server = http.createServer((req, res) => {
-    
+
     if (req.url === '/') {
         res.writeHead(200, {
             'Content-Type': 'text/html',
@@ -32,12 +34,17 @@ const server = http.createServer((req, res) => {
         res.end();
 
     } else if (req.url === '/cats/add-breed') {
-        res.writeHead(200, {
-            'Content-Type': 'text/html'
-        })
+        if (req.method === 'GET') {
+            res.writeHead(200, {
+                'Content-Type': 'text/html'
+            })
+    
+            res.write(addBreedTemplate);
+            res.end();
 
-        res.write(addBreedTemplate);
-        res.end();
+        } else if (req.method === 'POST') {
+            console.log(req)
+        }
 
     } else {
         res.writeHead(200, {
