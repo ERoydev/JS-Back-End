@@ -27,12 +27,13 @@ function createNewCat(data) {
             }
 
             console.log('Cat created successfully!')
-        })
+        });
 
-        console.log(updatedData)
+        return existingData;
     });
 };
 
+
 module.exports = {
-    createNewCat
+    createNewCat,
 }
