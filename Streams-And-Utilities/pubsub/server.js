@@ -1,5 +1,6 @@
 const http = require('http');
 const messageBroker = require('./messageBroker');
+
 // Initialize services
 require('./logger');
 require('./reportingService');

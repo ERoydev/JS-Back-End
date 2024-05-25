@@ -9,7 +9,7 @@ function add(data) {
 }
 
 function userRegister(data) {
-    console.log('Reporting Service: User register' + data.username);
+    console.log('Reporting Service: User register ' + data.username);
 }
 
 module.exports = add;

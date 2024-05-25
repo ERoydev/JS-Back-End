@@ -1,6 +1,4 @@
-const events = {
-
-};
+const events = {};
 
 function subscribe(eventType, eventHandler) {
     if (!events[eventType]) {
